@@ -1,0 +1,26 @@
+name: Auto Commit & Push from Visual Studio
+
+on:
+  push:
+    branches:
+      - main  # main 브랜치에 push할 때 실행
+
+  workflow_dispatch:  # 수동 실행 옵션
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3  # 저장소 불러오기
+
+      - name: Setup Git
+        run: |
+          git config --global user.email "your-email@example.com"
+          git config --global user.name "your-username"
+
+      - name: Commit and Push Changes
+        run: |
+          git add .
+          git commit -m "Auto commit from GitHub Actions"
+          git push
