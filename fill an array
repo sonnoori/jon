@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[10];
+    int count = -1;
+    for(int i = 0; i<10 ; i++)
+    {
+        cin >> arr[i];
+        count ++;
+        if (arr[i] == 0)
+        {
+            count --;
+            break;
+        }
+    }
+    for (int i = 0; i <10 ; i++)
+    {
+        if (arr[i] == 0)
+        {
+             for(count; (count ) > 0 ; count--)
+            {
+                cout << arr[count] << " ";
+            }
+        }
+        else
+        {
+            for(count ; count >= 0 ; count--)
+            {
+                cout << arr[count] << " ";
+            }       
+        }
+    }
+    
+    return 0;
+}
