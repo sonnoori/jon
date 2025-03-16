@@ -1,0 +1,34 @@
+#include <iostream>
+
+using namespace std;
+
+int N;
+void stdrecursive(int n)
+{
+    if (n == 0)
+        return;
+
+    stdrecursive(n - 1);
+
+    cout << n << " ";
+
+}
+void reverserecursive(int n)
+{
+    if (n == 0)
+        return;
+
+    cout << n << " ";
+    reverserecursive(n - 1);
+
+
+
+}
+int main() {
+    cin >> N;
+
+    stdrecursive(N);
+    cout << endl;
+    reverserecursive(N);
+    return 0;
+}
