@@ -1,0 +1,30 @@
+import math
+
+def check_triangle(a, b, c):
+    # 삼각형의 세 변이 실제로 삼각형을 만들 수 있는지 확인
+    if a + b <= c or a + c <= b or b + c <= a:
+        return "이 값으로는 삼각형을 만들 수 없습니다."
+
+    # 정삼각형 판별
+    if a == b == c:
+        return "정삼각형입니다."
+
+    # 직각삼각형 판별 (피타고라스의 정리 활용)
+    sides = sorted([a, b, c])
+    if math.isclose(sides[0]**2 + sides[1]**2, sides[2]**2):
+        return "직각삼각형입니다."
+
+    # 이등변삼각형 판별
+    if a == b or b == c or a == c:
+        return "이등변삼각형입니다."
+
+    # 일반삼각형
+    return "일반 삼각형입니다."
+
+# 예시
+a = float(input("첫 번째 변의 길이를 입력하세요: "))
+b = float(input("두 번째 변의 길이를 입력하세요: "))
+c = float(input("세 번째 변의 길이를 입력하세요: "))
+
+result = check_triangle(a, b, c)
+print(result)
