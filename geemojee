@@ -1,0 +1,40 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int N;
+int nums[2000];
+
+int main() {
+//int count = -1 ;
+int dap = 0;
+
+    cin >> N;
+
+    for (int i = 0; i < 2 * N; i++) {
+        cin >> nums[i];
+        
+        //count ++;
+    }
+    sort(nums, nums + N*2);
+    
+    if(N > 1)
+    {
+        for (int i = 0; i < N; i++) {
+        dap = max((nums[i] + nums[2*N - i - 1]),dap);
+        
+    }
+    }
+    else
+    {
+        dap = nums[0] + nums[1];
+    }
+    
+
+    cout << dap;
+
+
+    // Please write your code here.
+
+    return 0;
+}
