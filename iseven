@@ -1,0 +1,45 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int n;
+
+int get_10_digit(int n)
+{
+    return n / 10;
+}
+int get_1_digit(int n)
+{
+    return n % 10;
+}
+bool iseven(int n)
+{
+    if(n % 2 == 0)
+        return true;
+    else
+        return false;  
+}
+bool is_multi_5(int a, int b)
+{
+    if((a + b) % 5 == 0)
+        return true;
+    else 
+        return false;
+}
+
+int main() {
+    cin >> n;
+    if(iseven(n))
+    {
+        if(is_multi_5(get_10_digit(n) ,get_1_digit(n)))
+        {
+            cout << "Yes";
+        }
+        else
+            cout << "No";
+    }
+    else
+        cout << "No";
+
+    return 0;
+}
